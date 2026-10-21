@@ -1,0 +1,46 @@
+
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="flex items-center justify-center">
+    <div class="mb-4 p-8 flex items-center justify-center">
+        <p-card header="Signin" styleClass="custom-card" [style]="{ width: '30rem', 'align-items': 'center' }">
+        <div class="field">
+
+            <input pInputText id="name" formControlName="name" autocomplete="off" class="w-full custom-input" name="name" />
+            <label for="email">Full name</label>
+        </div>
+
+        <div class="field">
+            <input pInputText id="email" formControlName="email" autocomplete="off" class="w-full custom-input" name="email" />
+            <label for="name">Email</label>
+        </div>
+
+        <div class="field">
+            <input pInputText id="phone" formControlName="phone" autocomplete="off" class="w-full custom-input" name="phone" />
+            <label for="phone">Phone</label>
+        </div>
+
+        <div class="field">
+            <input pInputText id="password" formControlName="password" autocomplete="off" class="w-full custom-input"
+                name="password" />
+            <label for="password">Password</label>
+            <div class="error" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+                enter a valid password
+            </div>
+        </div>
+
+        <div class="field">
+            <input pInputText id="confirmPassword" formControlName="confirmPassword" autocomplete="off" class="w-full custom-input"
+                name="confirmPassword" />
+            <label for="confirmPassword">confirm Password</label>
+
+        </div>
+
+        <ng-template #footer>
+            <div class="flex gap-4 mt-1">
+                <p-button type="submit"  label="Submit"  severity="secondary"  [rounded]="true" class="w-full custom-btn" [outlined]="true" [disabled]="loading" styleClass="w-full custom-input" />
+                <!-- <p-button label="Save" class="w-full" styleClass="w-full" /> -->
+            </div>
+        </ng-template>
+
+        </p-card>
+    </div>
+</form>

@@ -1,0 +1,30 @@
+::ng-deep .custom-card {
+  background: #becfa0 !important;
+  color: #2d4b38 !important;
+  border-radius: 12px ;
+}
+
+.custom-input {
+  background-color: #fbfbfb;   /* input background */
+  border: 2px solid #2a381b;   /* border color (blue-500) */
+  color: #283519 !important;                 /* text color */
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+.custom-input:focus {
+  outline: none;
+  border-color: #161f01;      
+  box-shadow: 0 0 6px fbfbfb (37, 99, 235, 0.5);
+}
+
+.custom-btn{
+    background: #161f01 !important;
+    color: #fbfbfb !important;
+}
+
+.custom-btn:hover {
+  outline: none !important;
+  color: #111800 !important;   
+  background: #dff0cd !important;
+}

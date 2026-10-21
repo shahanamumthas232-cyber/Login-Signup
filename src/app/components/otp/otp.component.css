@@ -1,0 +1,12 @@
+/* src/styles.css */
+/* Target the input fields within the OTP component */
+.p-inputotp-input {
+    color: #4CAF50; /* Changes the text color to green */
+    background-color: #f0f8ff; /* Changes the background color */
+    border-color: #4CAF50; /* Changes the border color */
+}
+
+/* You can also target the container if needed */
+.p-inputotp {
+    background-color: #e0f2f1; /* Changes the container's background */
+}

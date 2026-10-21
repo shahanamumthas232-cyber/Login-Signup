@@ -1,0 +1,59 @@
+<!-- <div *ngIf="token">
+  <button (click)="logout()">logout</button>
+</div> -->
+
+<main class="bg-slate-900 text-white min-h-screen">
+  
+  <section class="flex flex-col lg:flex-row min-h-[80vh] w-full">
+    <div class="w-full lg:w-1/2 flex flex-col justify-center p-10 lg:p-20">
+      <h1 class="text-5xl lg:text-7xl font-extrabold mb-6 tracking-tight">
+        Share your <span class="text-blue-500">story</span> with the world.
+      </h1>
+      <p class="text-lg text-slate-400 mb-8 max-w-md">
+        Dcov is the platform where modern writers meet curious readers. 
+        Start your journey today with our distraction-free editor.
+      </p>
+      <div class="flex gap-4">
+        <p-button label="Start Writing" icon="pi pi-pencil" severity="primary" size="large" routerLink="/signin"></p-button>
+        <p-button label="Explore Blogs" [outlined]="true" severity="secondary" size="large" styleClass="text-white border-white"></p-button>
+      </div>
+    </div>
+
+    <div class="w-full lg:w-1/2 bg-slate-800 flex items-center justify-center p-6">
+       <div class="w-full h-full rounded-2xl bg-gradient-to-br from-blue-600 to-purple-700 shadow-2xl flex items-center justify-center">
+          <i class="pi pi-images text-[10rem] opacity-20"></i>
+       </div>
+    </div>
+  </section>
+
+  <section class="p-10 lg:px-20 py-20">
+    <div class="flex justify-between items-end mb-10">
+      <div>
+        <h2 class="text-3xl font-bold">Latest Stories</h2>
+        <p class="text-slate-400">Handpicked for you</p>
+      </div>
+      <p-button label="View All" [text]="true" icon="pi pi-arrow-right" iconPos="right"></p-button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <p-card *ngFor="let post of featuredPosts" styleClass="bg-slate-800 border-none h-full hover:bg-slate-750 transition-all cursor-pointer">
+        <ng-template pTemplate="header">
+          <img [src]="post.image" alt="post cover" class="w-full h-48 object-cover rounded-t-xl" />
+        </ng-template>
+        <h3 class="text-xl font-bold mb-2">{{post.title}}</h3>
+        <p class="text-slate-400 text-sm line-clamp-3 mb-4">{{post.excerpt}}</p>
+        <ng-template pTemplate="footer">
+          <div class="flex items-center gap-2">
+            <p-avatar [label]="post.authorInitials" shape="circle"></p-avatar>
+            <span class="text-xs text-slate-500">{{post.author}} • {{post.date}}</span>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-800 p-10 text-center">
+    <p class="text-slate-500">© 2026 Dcov Blogging Platform. Built with PrimeNG & Tailwind.</p>
+  </footer>
+
+</main>

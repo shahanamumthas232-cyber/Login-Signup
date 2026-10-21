@@ -1,0 +1,65 @@
+<div class="flex justify-center items-center  min-h-screen p-6 bg-slate-900">
+  <div class="card w-full max-w-md p-8 rounded-xl shadow-4xl bg-slate-800 text-blue-500; bg-green-100">
+    <h3 class="mt-2 text-2xl font-bold tracking-widest text-center uppercase">Login</h3>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-6">
+      
+      <div class="flex flex-col">
+        <label for="email" class="text-sm font-medium text-slate-400">Email address</label>
+        <input 
+          type="email" 
+          class="w-full p-3 border-none rounded bg-slate-700 text-white focus:ring-2 focus:ring-blue-500" 
+          id="email" 
+          formControlName="email" 
+          placeholder="name@example.com"
+          [class.is-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+        >
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="invalid-feedback">
+          Please enter a valid email.
+        </div>
+      </div>
+      
+      <div class="flex flex-col">
+        <label for="password" class="text-sm font-medium text-slate-400">Password</label>
+        <input 
+          type="password" 
+          class="w-full p-3 border-none rounded bg-slate-700 text-white focus:ring-2 focus:ring-blue-500" 
+          id="password" 
+          formControlName="password"
+          [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+        >
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="invalid-feedback">
+          Password is required.
+        </div>
+      </div>
+      
+      <div class="flex justify-center mt-3">
+         <p-button 
+          label="Login" 
+          type="submit" 
+          styleClass="w-full  bg-green-600 border-none hover:bg-green-700 text-white font-bold"
+          [disabled]="loginForm.invalid">
+        </p-button>
+        
+      </div>
+       <small class="error text-red-600" *ngIf="message">{{ message }}</small>
+
+      <div class="text-center">
+        <a href="#" class="d-block">Forgot Password?</a>
+        <span>Don't have an account? <a [routerLink]="'/signin'">Sign Up</a></span>
+      </div>
+       <!-- <div class="m-1 text-center text-xs text-slate-500">
+        <p>by</p>
+        <p class="font-semibold uppercase tracking-tight">Pinnacle Galaxy Pvt. Ltd.</p>
+      </div> -->
+      
+    </form>
+  </div>
+</div> 
+
+
+
+
+
+
+
+
